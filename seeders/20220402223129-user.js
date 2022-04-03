@@ -18,7 +18,8 @@ module.exports = {
         {
           email:'erma@gmail.com',
           password: '$2b$10$7ovHDrtaMe.FmutXxEhnWOo7rDOdTloUMgqms5RXYmL5/4dfM.OTm', //123456
-          status:'admin'
+          status:'admin',
+          fullName:"erma suryani"
         },
       ],
       {}
