@@ -1,7 +1,5 @@
 'use strict';
-const bcrypt = require("bcrypt")
-const salt = await bcrypt.genSalt(10)
-const hashedPassword = bcrypt.hash("12345678",salt)
+
 
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -20,7 +18,7 @@ module.exports = {
       [
         {
           email:'erma@gmail.com',
-          password: hashedPassword, //12345678
+          password: '$2b$10$7ovHDrtaMe.FmutXxEhnWOo7rDOdTloUMgqms5RXYmL5/4dfM.OTm', //123456
           status:'admin',
           fullName:"erma suryani",
           createdAt:"12-03-2022",
