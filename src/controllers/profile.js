@@ -59,7 +59,7 @@ exports.getProfile= async(req,res)=>{
         })
 
             data = JSON.parse(JSON.stringify(data))
-            const path = "https://wow-app-server.herokuapp.com/api/v1/uploads/imgCover/"
+            const path = "https://wow-app-server.herokuapp.com/uploads/imgCover/"
 
             data={
                 ...data,
