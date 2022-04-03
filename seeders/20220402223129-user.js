@@ -24,7 +24,11 @@ module.exports = {
           createdAt:"12-03-2022",
           updatedAt:"12-03-2022"
         },
-      ],
+      ],    
+      {}
+    )
+
+    await queryInterface.bulkInsert(
       'profiles',
       [
         {
@@ -35,7 +39,7 @@ module.exports = {
           idUser: 2,
           createdAt:"12-03-2022",
           updatedAt:"12-03-2022"
-              }
+        }
       ],
       {}
     )
