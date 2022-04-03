@@ -1,6 +1,5 @@
 'use strict';
 
-
 module.exports = {
   async up (queryInterface, Sequelize) {
     /**
@@ -12,23 +11,25 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-
     await queryInterface.bulkInsert(
-      'users',
+      'profiles',
       [
         {
-          email:'erma@gmail.com',
-          password: '$2b$10$7ovHDrtaMe.FmutXxEhnWOo7rDOdTloUMgqms5RXYmL5/4dfM.OTm', //123456
-          status:'admin',
-          fullName:"erma suryani",
+          gender: 'female',
+          address: 'Banjaran',
+          fotoProfile: 'erma.jpeg',
+          phoneNumber: '123456789',
+          idUser: 1,
           createdAt:"12-03-2022",
           updatedAt:"12-03-2022"
-        },
-      ],    
+        }
+      ],
       {}
     )
   },
 
+
+  
   async down (queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
