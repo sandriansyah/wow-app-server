@@ -25,6 +25,18 @@ module.exports = {
           updatedAt:"12-03-2022"
         },
       ],
+      'profiles',
+      [
+        {
+          gender: 'female',
+          address: 'Banjaran',
+          fotoProfile: 'erma.jpeg',
+          phoneNumber: '123456789',
+          idUser: 2,
+          createdAt:"12-03-2022",
+          updatedAt:"12-03-2022"
+              }
+      ],
       {}
     )
   },
