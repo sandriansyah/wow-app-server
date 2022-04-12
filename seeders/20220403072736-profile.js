@@ -11,21 +11,21 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    // await queryInterface.bulkInsert(
-    //   'profiles',
-    //   [
-    //     {
-    //       gender: 'female',
-    //       address: 'Banjaran',
-    //       fotoProfile: 'erma.jpeg',
-    //       phoneNumber: '123456789',
-    //       idUser: 1,
-    //       createdAt:"12-03-2022",
-    //       updatedAt:"12-03-2022"
-    //     }
-    //   ],
-    //   {}
-    // )
+    await queryInterface.bulkInsert(
+      'profiles',
+      [
+        {
+          gender: 'female',
+          address: 'Banjaran',
+          fotoProfile: 'erma.jpeg',
+          phoneNumber: '123456789',
+          idUser: 1,
+          createdAt:"12-03-2022",
+          updatedAt:"12-03-2022"
+        }
+      ],
+      {}
+    )
   },
 
 
