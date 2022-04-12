@@ -56,7 +56,7 @@ exports.getBooks = async (req,res)=>{
 
         dataBooks = JSON.parse(JSON.stringify(dataBooks))
 
-        const path = "https://wow-app-server.herokuapp.com/uploads/imgCover/"
+        const path = "http://localhost:5000/uploads/imgCover/"
 
         dataBooks = dataBooks.map((book)=>{
             return{
@@ -92,7 +92,7 @@ exports.getBook = async(req,res)=>{
 
         dataBook= JSON.parse(JSON.stringify(dataBook))
 
-        const path = "https://wow-app-server.herokuapp.com/uploads/imgCover/"
+        const path = "http://localhost:5000/uploads/imgCover/"
 
         dataBook = {
             ...dataBook, 
