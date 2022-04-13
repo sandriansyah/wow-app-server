@@ -1,24 +1,18 @@
 const {book} = require("../../models")
 
-const cloudinary = require('../utils/cloudinary');
-
 exports.addBook = async (req,res) => {
+
+    // const data = req.body
+    // data.bookFile = req.file.bookFile[0].filename
+    // data.imgCover = req.file.imgCover[0].filename
 
     try {
 
         const data = req.body
-
-        const result = await cloudinary.uploader.upload(req.file.path, {
-            folder: 'WOW-APP',
-            use_filename: true,
-            unique_filename: true,
-          });
-
-
         const newBook = await book.create({
             ...data,
-            bookFile: result.public_id,
-            imgCover: result.public_id,
+            bookFile: req.files.bookFile[0].filename,
+            imgCover: req.files.imgCover[0].filename
         })
 
         const bookData = await book.findOne({
@@ -30,7 +24,13 @@ exports.addBook = async (req,res) => {
             }
         })
 
-        
+        // let createProducts = JSON.parse(JSON.stringify(bookData)); 
+
+
+        // res.send({ 
+        // status: "Success", 
+        // data: bookData,
+        // });
 
         res.status(200).send({
             status:"success",
