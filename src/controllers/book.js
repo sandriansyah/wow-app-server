@@ -17,8 +17,8 @@ exports.addBook = async (req,res) => {
 
         const newBook = await book.create({
             ...data,
-            bookFile: req.files.bookFile[0].filename,
-            imgCover: req.files.imgCover[0].filename
+            bookFile: result.public_id,
+            imgCover: result.public_id,
         })
 
         const bookData = await book.findOne({
