@@ -17,7 +17,7 @@ exports.addBook = async (req,res) => {
         const result = await cloudinary.uploader.upload(req.file.path, {
             folder: 'wowapp',
             use_filename: true,
-            unique_filename: false,
+            unique_filename: true,
           });
 
           const dataBook ={
