@@ -18,11 +18,11 @@ exports.addBook = async (req,res) => {
           });
 
           const dataBook ={
-              title: data.title,
-              publicationDate: data.publicationDate,
-              pages: data.pages,
-              author: data.author,
-              isbn: data.isbn,
+              title: req.body.title,
+              publicationDate: req.body.publicationDate,
+              pages: req.body.pages,
+              author: req.body.author,
+              isbn: req.body.isbn,
               imgCover: result.public_id,
           }
 
