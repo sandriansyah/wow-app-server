@@ -5,7 +5,7 @@ exports.uploadTransferProof = (transferProof) => {
   // code here 
   const storage = multer.diskStorage({ 
     destination: function (req, file, cb) { 
-      cb(null, "uploads/transferProof"); 
+      cb(null, "WOW-APP"); 
     }, 
     filename: function (req, file, cb) { 
       cb(null, Date.now() + "-" + file.originalname.replace(/\s/g, "")); 
