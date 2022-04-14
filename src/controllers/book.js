@@ -1,3 +1,4 @@
+const { date } = require("joi");
 const {book} = require("../../models")
 const cloudinary = require('../utils/cloudinary')
 
@@ -15,10 +16,17 @@ exports.addBook = async (req,res) => {
             use_filename: true,
             unique_filename: false,
           });
-        const newBook = await book.create({
-            ...data,
-            imgCover: req.file.filename
-        })
+
+          const dataBook ={
+              title: data.title,
+              publicationDate: data.publicationDate,
+              pages: data.pages,
+              author: data.author,
+              isbn: data.isbn,
+              imgCover: result.public_id,
+          }
+
+        const newBook = await book.create(dataBook)
 
         const bookData = await book.findOne({
             where:{
