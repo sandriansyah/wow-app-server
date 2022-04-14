@@ -41,7 +41,7 @@ exports.addMyListBook = async (req,res)=>{
 exports.getUserListBook = async(req,res)=>{
 
     try {
-        const data = await userListBook.findAll({
+        let data = await userListBook.findAll({
             where:{
                 idUser: req.user.id,
             }, 
@@ -54,6 +54,18 @@ exports.getUserListBook = async(req,res)=>{
                 attributes:{
                     exclude:["createdAt","updatedAt"]
                 }
+            }
+        })
+
+        data = JSON.parse(JSON.stringify(data))
+        const path = "http://localhost:5000/uploads/imgCover/"
+
+
+        data = data.map((book)=>{
+            console.log(book.book.bookFile);
+            return{
+                ...book,
+                imgCover:path + book.book.imgCover,
             }
         })
 
