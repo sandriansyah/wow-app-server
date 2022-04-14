@@ -1,5 +1,6 @@
 const { date } = require("joi");
 const {book} = require("../../models")
+
 const cloudinary = require('../utils/cloudinary')
 
 exports.addBook = async (req,res) => {
@@ -12,7 +13,7 @@ exports.addBook = async (req,res) => {
 
         const data = req.body
         const result = await cloudinary.uploader.upload(req.file.path, {
-            folder: 'WOW_APP',
+            folder: 'WOW-APP',
             use_filename: true,
             unique_filename: false,
           });
