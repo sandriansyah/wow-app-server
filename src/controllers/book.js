@@ -12,7 +12,7 @@ exports.addBook = async (req,res) => {
     try {
 
         const data = req.body
-        console.log(data);
+        // console.log(data);
         console.log(req.files);
         const result = await cloudinary.uploader.upload(req.file.path, {
             folder: 'WOW-APP',
