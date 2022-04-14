@@ -1,4 +1,5 @@
 const {book} = require("../../models")
+const cloudinary = require('../utils/cloudinary')
 
 exports.addBook = async (req,res) => {
 
@@ -9,10 +10,14 @@ exports.addBook = async (req,res) => {
     try {
 
         const data = req.body
+        const result = await cloudinary.uploader.upload(req.file.path, {
+            folder: 'WOW_APP',
+            use_filename: true,
+            unique_filename: false,
+          });
         const newBook = await book.create({
             ...data,
-            bookFile: req.files.bookFile[0].filename,
-            imgCover: req.files.imgCover[0].filename
+            imgCover: result.public_id,
         })
 
         const bookData = await book.findOne({
