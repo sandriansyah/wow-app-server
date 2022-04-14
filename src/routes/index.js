@@ -26,7 +26,7 @@ router.get("/users",getUsers)
 router.get("/user",auth,getUser)
 router.delete("/user/:id",deleteUser)
 
-router.patch("/profile",auth,uploadFile("bookFile","fotoProfile"),editProfile)
+router.patch("/profile",auth,uploadTransferProof("imgCover"),editProfile)
 router.get("/profile",auth,getProfile)
 
 router.post("/book",uploadFile("bookFile","imgCover"),addBook)
