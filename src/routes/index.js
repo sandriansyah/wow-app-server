@@ -29,7 +29,7 @@ router.delete("/user/:id",deleteUser)
 router.patch("/profile",auth,uploadTransferProof("imgCover"),editProfile)
 router.get("/profile",auth,getProfile)
 
-router.post("/book",uploadFile("bookFile","imgCover"),addBook)
+router.post("/book",uploadTransferProof("imgCover"),addBook)
 router.get("/books",getBooks)
 router.get("/book/:id",getBook)
 router.delete("/book/:id",auth,deleteBook)
