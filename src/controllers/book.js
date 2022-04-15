@@ -26,9 +26,9 @@ exports.addBook = async (req,res) => {
               pages: req.body.pages,
               author: req.body.author,
               isbn: req.body.isbn,
-              imgCover: req.file.filename,
+              imgCover: result.public_id,
           }
-
+          console.log(dataBook);
         const newBook = await book.create(dataBook)
 
         const bookData = await book.findOne({
