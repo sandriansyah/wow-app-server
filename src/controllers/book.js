@@ -25,6 +25,7 @@ exports.addBook = async (req,res) => {
               pages: req.body.pages,
               author: req.body.author,
               isbn: req.body.isbn,
+              about: req.body.about,
               imgCover: result.public_id,
           }
           console.log(dataBook);
