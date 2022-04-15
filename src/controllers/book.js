@@ -72,7 +72,7 @@ exports.getBooks = async (req,res)=>{
 
         dataBooks = JSON.parse(JSON.stringify(dataBooks))
 
-        const path = "https://windowofworld-server.herokuapp.com/api/v1/"
+        const path = "https://res.cloudinary.com/doufzuoet/image/upload/v1649982885/"
 
         dataBooks = dataBooks.map((book)=>{
             return{
