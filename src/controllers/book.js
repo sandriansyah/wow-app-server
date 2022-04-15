@@ -108,7 +108,7 @@ exports.getBook = async(req,res)=>{
 
         dataBook= JSON.parse(JSON.stringify(dataBook))
 
-        const path = "http://localhost:5000/uploads/imgCover/"
+        const path = "https://res.cloudinary.com/doufzuoet/image/upload/v1649982885/"
 
         dataBook = {
             ...dataBook, 
