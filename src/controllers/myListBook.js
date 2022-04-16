@@ -58,7 +58,7 @@ exports.getUserListBook = async(req,res)=>{
         })
 
         data = JSON.parse(JSON.stringify(data))
-        const path = "http://localhost:5000/uploads/imgCover/"
+        const path = "https://res.cloudinary.com/doufzuoet/image/upload/v1649982885/"
 
 
         data = data.map((book)=>{
